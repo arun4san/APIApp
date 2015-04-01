@@ -1,0 +1,139 @@
+    API URLS
+******************
+
+
+Products
+*********
+-------------------------------------------------------------------------------------------------------
+create Product
+**************
+
+Method  : POST
+URL : http://localhost:3000/products/create
+
+Parameters
+----------------
+name = {your_product_name}
+"description" = {description of the product}
+"price" = {price of the product}
+
+sample data
+**************
+{
+
+    "name": "watch",
+    "description" : "fast track watch",
+    "price" : 5000
+
+}
+
+------------------------------------------------------------------------------------------------
+
+update product
+****************
+URL : http://localhost:3000/products/update
+Method  : POST
+
+Sample data
+
+{
+    "product" : "551a888d554eafd867000002", //(Product unique ID (mongodb _id)
+    "name": "watch",
+    "description" : "fasttrack company",
+    "price" : 1500
+
+}
+-------------------------------------------------------------------------------------------------------
+delete product
+**************
+URL : http://localhost:3000/products/delete
+Method  : POST
+
+Sample data
+
+{
+    "product" : "551a863d354e428767000002" (Product unique ID (mongodb _id)
+}
+------------------------------------------------------------------------------------------------------------
+
+get products list
+***************
+URL : http://localhost:4000/products/list
+Method  : GET
+----------------------------------------------------------------------------------------------------------------
+Orders
+*********
+------------------------------------------------------------------------------------------------------------------
+create Order
+**************
+
+Method  : POST
+URL : http://localhost:3000/orders/create
+
+Parameters
+----------------
+product = {Products unique ID (mongodb _id}
+isCompleted = {status of the order}
+
+
+sample data
+**************
+{
+
+    "product": ["551a888d554eafd867000002","551b8db6be90acd14b000002"],  // (Products unique ID (mongodb _id)
+    "isCompleted" : "false"
+
+}
+
+------------------------------------------------------------------------------------------------------------------------
+update order
+****************
+URL : http://localhost:3000/orders/update
+Method  : POST
+
+Sample data
+*************
+
+{
+    "order" : "551b96e060b68b8b50000002",   // (Order unique ID (mongodb _id)
+    "isCompleted" : "true"
+
+}
+--------------------------------------------------------------------------------------------------------------------------
+delete product
+**************
+URL : http://localhost:3000/products/delete
+Method  : POST
+
+Sample data
+
+{
+    "product" : "551a863d354e428767000002" (Product unique ID (mongodb _id)
+}
+--------------------------------------------------------------------------------------------------------------------------
+
+getAll Orders list
+*********************
+URL : http://localhost:4000/orders/list
+Method  : GET
+
+------------------------------------------------------------------------------------------------------------------------
+
+Orders Today
+*************
+URL : http://localhost:4000/orders/today
+Method  : GET
+-------------------------------------------------------------------------------------------------------------------------
+Orders This week
+*****************
+URL : http://localhost:4000/orders/thisWeek
+Method  : GET
+
+-----------------------------------------------------------------------------------------------------------------------
+
+Orders This Month
+******************
+URL : http://localhost:4000/orders/thisMonth
+Method  : GET
+
+-------------------------------------------------------------------------------------------------------------------------
