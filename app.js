@@ -8,6 +8,7 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+mongoose = require('mongoose');
 
 var app = express();
 var config = global.config = require('./config.js');
@@ -31,19 +32,13 @@ if ('development' == app.get('env')) {
 
 
 // Initializing MongoDB
+var config = global.config = require('./config.js');
 
-var mongo = global.mongo = require('mongodb-wrapper')
-var db = global.db = mongo.db(config.database.url)
-var ObjectId = global.ObjectId = mongo.ObjectID
+mongoose.connect(config.database.url); // connect to our database
 
-db.collection('products')
-db.collection('orders')
 
 // Http Routes
 require('./routes/http-routes')(app);
-
-
-console.log("object Id.......",global.mongo.ObjectID())
 
 
 // Http Server

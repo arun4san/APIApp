@@ -7,7 +7,7 @@ var config = {
 
     database : {
         service : 'MONGODB',
-        url : 'mongodb://0.0.0.0:12345/app'
+        url: 'mongodb://0.0.0.0:12345/sample'
     }
 };
 
